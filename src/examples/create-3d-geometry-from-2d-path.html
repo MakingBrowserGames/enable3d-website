@@ -21,11 +21,10 @@
         }
 
         init() {
-          this.requestThirdDimension()
+          this.accessThirdDimension()
         }
 
         create() {
-          this.accessThirdDimension()
           this.third.warpSpeed()
           this.third.camera.position.set(15, 15, 30)
 
@@ -102,7 +101,7 @@
       }
 
       window.addEventListener('load', () => {
-        enable3d(() => new Phaser.Game(config)).withPhysics('/lib')
+        enable3d(() => new Phaser.Game(config)).withPhysics('/lib/moz')
       })
     </script>
   </body>

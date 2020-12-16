@@ -24,7 +24,7 @@
         }
 
         init() {
-          this.requestThirdDimension()
+          this.accessThirdDimension()
           this.camerasArr = []
           this.cameraIndex = 0
           this.canCameraMove = true
@@ -33,7 +33,6 @@
         }
 
         create() {
-          this.accessThirdDimension()
           this.third.warpSpeed('camera', 'ground', 'grid', 'light', 'sky')
           this.third.camera.position.set(10, 10, 20)
 

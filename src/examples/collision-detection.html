@@ -22,11 +22,10 @@
         }
 
         init() {
-          this.requestThirdDimension()
+          this.accessThirdDimension()
         }
 
         create() {
-          this.accessThirdDimension()
           this.third.warpSpeed()
 
           const redBox = this.third.physics.add.box({ name: 'redBox', y: 10, z: 0.5, width: 2, height: 2 }, { lambert: { color: 0xff0000 } })
