@@ -125,6 +125,17 @@
           <li><a href="./examples/create-and-destroy-objects-and-physics.html">Create and Destroy Objects and Physics</a></li>
         </ul>
       </div>
+      <script>
+        // highlight all new examples
+        const links = document.querySelectorAll('a')
+        links.forEach(link => {
+          console.log(link.innerHTML)
+          link.innerHTML = link.innerHTML.replace(
+            /NEW$/,
+            '<b style="background-color: rgba(0,0,0,0.5); color:white; border-radius: 4px; padding: 2px 8px; font-size: 10px; position: relative; top: -2px;">NEW</b>'
+          )
+        })
+      </script>
     </section>
     <footer>
       <a href="https://github.com/enable3d/enable3d#readme">
