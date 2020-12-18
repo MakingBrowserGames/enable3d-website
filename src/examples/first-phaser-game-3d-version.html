@@ -35,9 +35,9 @@
 
         async create() {
           const { lights } = await this.third.warpSpeed('-ground', '-sky', '-orbitControls')
-          const { hemisphericLight, ambientLight } = lights
-          hemisphericLight.intensity = 1
-          ambientLight.intensity = 1
+          // const { hemisphericLight, ambientLight } = lights
+          // hemisphericLight.intensity = 1
+          // ambientLight.intensity = 1
 
           // adjust the camera
           this.third.camera.position.set(0, 5, 20)
@@ -55,7 +55,7 @@
           this.scoreText.depth = 1
 
           // add platforms
-          const platformMaterial = { phong: { transparent: true, color: 0x21572f } }
+          const platformMaterial = { phong: { transparent: true, color: new THREE.Color(0x21572f).convertSRGBToLinear() } }
           const platforms = [
             this.third.physics.add.box({ name: 'platform-ground', y: -2, width: 30, depth: 5, height: 2, mass: 0 }, platformMaterial),
             this.third.physics.add.box({ name: 'platform-right1', x: 7, y: 4, width: 15, depth: 5, mass: 0 }, platformMaterial),
@@ -88,7 +88,7 @@
             const star = this.third.add.extrude({ shape: starShape[0], depth: 120 })
             star.name = `star-${i}`
             star.scale.set(1 / starScale, 1 / -starScale, 1 / starScale)
-            star.material.color.setHex(0xffd851)
+            star.material.color.setHex(0xffd851).convertSRGBToLinear()
             star.position.setX(pos.x)
             star.position.setY(pos.y)
             this.third.physics.add.existing(star, { shape: 'box', ignoreScale: true, width: 0.5, height: 0.5, depth: 0.5 })

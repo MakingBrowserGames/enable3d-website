@@ -13,7 +13,7 @@
 
   <body>
     <script>
-      const { enable3d, Scene3D, Cameras, Canvas } = ENABLE3D
+      const { enable3d, Scene3D, Cameras, Canvas, THREE } = ENABLE3D
 
       class MainScene extends Scene3D {
         constructor() {
@@ -27,7 +27,7 @@
         create() {
           this.third.warpSpeed('light', 'orbitControls', 'sky')
 
-          const color = 0x0000ff
+          const color = new THREE.Color('orange').convertSRGBToLinear()
 
           this.objects = [
             this.third.add.box({ x: -2, y: 3 }),

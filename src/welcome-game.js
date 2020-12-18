@@ -40,7 +40,6 @@ class MainScene extends Scene3D {
 
   async create() {
     this.warpSpeed('-ground', '-orbitControls')
-    this.renderer.gammaFactor = 1.5
 
     // this.physics.debug.enable()
 
