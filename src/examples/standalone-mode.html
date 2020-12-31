@@ -7,7 +7,7 @@
     <title>Standalone Modes</title>
     <link rel="stylesheet" href="/css/examples.css?ver=1.0.0" />
     <script src="/js/examples.js?ver=1.1.0"></script>
-    <script src="/lib/enable3d.framework.0.20.0.min.js"></script>
+    <script src="/lib/enable3d.framework.0.21.0.min.js"></script>
   </head>
 
   <body>
@@ -31,11 +31,17 @@
           console.log('preload')
         }
 
-        create() {
+        async create() {
           console.log('create')
 
           // set up scene (light, ground, grid, sky, orbitControls)
-          this.warpSpeed()
+          const { lights } = await this.warpSpeed()
+          const { hemisphereLight, ambientLight, directionalLight } = lights
+          console.log(hemisphereLight.intensity)
+          const intensity = 0.4
+          hemisphereLight.intensity = intensity
+          ambientLight.intensity = intensity
+          directionalLight.intensity = intensity
 
           // enable physics debug
           this.physics.debug.enable()

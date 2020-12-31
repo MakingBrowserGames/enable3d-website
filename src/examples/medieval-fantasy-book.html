@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="/css/examples.css?ver=1.0.0" />
     <script src="/js/examples.js?ver=1.1.0"></script>
     <script src="/lib/phaser.min.js"></script>
-    <script src="/lib/enable3d.phaserExtension.0.20.0.min.js"></script>
+    <script src="/lib/enable3d.phaserExtension.0.21.0.min.js"></script>
   </head>
 
   <body>
@@ -40,7 +40,7 @@
           const { lights } = await this.third.warpSpeed('-ground', '-orbitControls')
 
           const { hemisphereLight, ambientLight, directionalLight } = lights
-          const intensity = 0.8
+          const intensity = 0.6
           hemisphereLight.intensity = intensity
           ambientLight.intensity = intensity
           directionalLight.intensity = intensity

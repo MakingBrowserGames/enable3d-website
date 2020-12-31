@@ -129,7 +129,6 @@
         // highlight all new examples
         const links = document.querySelectorAll('a')
         links.forEach(link => {
-          console.log(link.innerHTML)
           link.innerHTML = link.innerHTML.replace(
             /NEW$/,
             '<b style="background-color: rgba(0,0,0,0.5); color:white; border-radius: 4px; padding: 2px 8px; font-size: 10px; position: relative; top: -2px;">NEW</b>'
